@@ -7,5 +7,12 @@ User.hasMany(Order, {
   onDelete: 'CASCADE'
 });
 
+Menu.hasMany(Order, {
+  foreignKey: 'menu_id',
+  onDelete: 'CASCADE'
+});
+Order.belongsTo(Menu, {
+  foreignKey: 'menu_id'
+});
 
 module.exports = { User, Menu, Order };
