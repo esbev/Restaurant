@@ -13,7 +13,7 @@ Order.init(
     },
     items_ordered: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: false, 
     },
     date_created: {
       type: DataTypes.DATE,
