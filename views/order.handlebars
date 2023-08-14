@@ -1,0 +1,41 @@
+{{#each category |category|}}
+<div class="card hoverable margin-10">
+  <div class="card-image waves-effect waves-block waves-light">
+    <img class="activator" src="../images/drinks.jpg">
+  </div>
+  <div class="card-content light-blue lighten-4">
+    <span class="card-title activator">
+      <strong>{{category.name}}</strong>
+    </span>
+  </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">
+      {{category.name}}
+      <i class="material-icons right">close</i>
+    </span>
+    
+    <table class="highlight">
+      <tbody>
+        {{#each item |item|}}
+        <tr>
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>
+            <a class="btn-floating btn-small waves-effect waves-light red" id="decrement-{{item.id}}">
+              <i class="material-icons">remove</i>
+            </a>
+            <label class="grey-text text-darken-4" id="amount-{{item.id}}">0</label>
+            <a class="btn-floating btn-small waves-effect waves-light green" id="increment-{{item.id}}">
+              <i class="material-icons">add</i>
+            </a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  
+  </div>
+</div>
+{{/each}}
+
+<script src="../Public/js/order.js"></script>
