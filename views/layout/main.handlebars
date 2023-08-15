@@ -16,14 +16,13 @@
 	<header>
 		<nav>
 			<div class="nav-wrapper">
-				<a href="./main.handlebars" class="brand-logo left margin-left-60">Restaurant Express</a>
+				<a href="./main" class="brand-logo left margin-left-60">Restaurant Express</a>
 				<img src="../../Public/images/logo.png" class="brand-logo left opacity-80" width="50">
 				<ul id="nav-mobile" class="right">
 					{{#if !logged_in}}
 					<li><button class="btn" id="createAccount">Create Account</button></li>
 					<li><button class="btn" id="Login">Login</button></li>
-					{{/if}}
-					{{#if logged_in}}
+					{{else}}
 					<li><button class="btn" id="logout">Logout</button></li>
 					{{/if}}
 				</ul>
