@@ -43,4 +43,21 @@ router.post('/logout', (req, res) => {
   }
 });
 
+app.get("/api/user/:username", (req, res) => {
+  if (req.params.username) {
+    console.info(`${req.method} request received to get a username`);
+    const userUsername = req.params.username;
+    for (let i = 0; i < user.length; i++) {
+      const currentUser = user[i];
+      if (currentUser.username === userUsername) {
+        res.status(200).json(currentUser);
+        return;
+      }
+    }
+    res.status(404).send("Username not found");
+  } else {
+    res.status(400).send("User ID not provided");
+  }
+});
+
 module.exports = router;
