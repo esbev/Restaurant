@@ -2,49 +2,49 @@
   {
     "id": 1,
     "name": "Beverages",
-    "label": "thirst quenchers",
+    "label": "Thirst Quenchers",
     "filename": "beverages.jpg",
     "description": "Refreshing beverages to quench your thirst."
   },
   {
     "id": 2,
     "name": "Appetizers",
-    "label": "snacks",
+    "label": "Snacks",
     "filename": "appetizers.jpg",
     "description": "Delicious appetizers to start your meal."
   },
   {
     "id": 3,
     "name": "Sandwiches",
-    "label": "sandwiches",
+    "label": "Ergonomic Handhelds",
     "filename": "sandwiches.jpg",
     "description": "A variety of mouthwatering sandwiches for every taste."
   },
   {
     "id": 4,
     "name": "Beef and Chicken",
-    "label": "one if by land",
-    "filename": "beef-chicken.jpg",
+    "label": "One if by land",
+    "filename": "land.jpg",
     "description": "Handheld delights featuring beef and chicken."
   },
   {
     "id": 5,
     "name": "Seafood",
-    "label": "two if by sea",
+    "label": "Two if by sea",
     "filename": "seafood.jpg",
     "description": "Fresh seafood dishes for seafood enthusiasts."
   },
   {
     "id": 6,
     "name": "Pasta",
-    "label": "send noodz",
+    "label": "Send Noodz",
     "filename": "pasta.jpg",
     "description": "Hearty pasta dishes to satisfy your cravings."
   },
   {
     "id": 7,
     "name": "Desserts",
-    "label": "straight to the waste",
+    "label": "Straight to the Waist",
     "filename": "desserts.jpg",
     "description": "Indulgent desserts that you won't want to waste."
   }
