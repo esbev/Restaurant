@@ -1,7 +1,7 @@
 {{#each category |category|}}
 <div class="card hoverable margin-10">
   <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src="../images/drinks.jpg">
+    <img class="activator" src="../images/{{category.filename}}">
   </div>
   <div class="card-content light-blue lighten-4">
     <span class="card-title activator">
@@ -24,7 +24,7 @@
             <a class="btn-floating btn-small waves-effect waves-light red" id="decrement-{{item.id}}">
               <i class="material-icons">remove</i>
             </a>
-            <label class="grey-text text-darken-4" id="amount-{{item.id}}">0</label>
+            <label class="grey-text text-darken-4" id="item-count-{{item.id}}">0</label>
             <a class="btn-floating btn-small waves-effect waves-light green" id="increment-{{item.id}}">
               <i class="material-icons">add</i>
             </a>
