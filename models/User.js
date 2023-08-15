@@ -43,7 +43,7 @@ User.init(
         len: [8],
       },
     },
-    orders: {
+    item_ordered: {
       type: DataTypes.INTEGER
     }
   },

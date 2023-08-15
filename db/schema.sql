@@ -1,2 +1,2 @@
-DROP DATABASE IF EXISTS restaurant_db;
-CREATE DATABASE restaurant_db;
+DROP DATABASE IF EXISTS menu_db;
+CREATE DATABASE menu_db;
