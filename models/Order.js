@@ -20,6 +20,9 @@ Order.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
+    price_total: {
+      type: DataTypes.DECIMAL,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
