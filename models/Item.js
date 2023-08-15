@@ -23,7 +23,13 @@ Item.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
     },
-
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id'
+      }
+    }
   },
   {
     sequelize,
