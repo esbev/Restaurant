@@ -1,10 +1,14 @@
 [
-    {
-      "items_ordered": 1,
-      "date_created": "2023-03-08"
-    },
-    {
-      "items_ordered": 2,
-      "date_created": "2023-03-09"
-    }
-  ]
+  {
+    "items_ordered": 2,
+    "date_created": "2023-08-01",
+    "price_total": 18.98,
+    "user_id": 1
+  },
+  {
+    "items_ordered": 1,
+    "date_created": "2023-08-02",
+    "price_total": 9.99,
+    "user_id": 2
+  }
+]

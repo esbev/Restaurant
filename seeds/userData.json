@@ -1,16 +1,16 @@
 [
-    {
-      "username": "johndoe",
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "johndoe@example.com",
-      "password": "password123"
-    },
-    {
-      "username": "janedoe",
-      "firstName": "Jane",
-      "lastName": "Doe",
-      "email": "janedoe@example.com",
-      "password": "password123"
-    }
-  ]
+  {
+    "username": "johnDoe",
+    "firstName": "John",
+    "lastName": "Doe",
+    "password": "password123",
+    "item_ordered": 2
+  },
+  {
+    "username": "janeSmith",
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "password": "securepass",
+    "item_ordered": 1
+  }
+]
