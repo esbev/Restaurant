@@ -62,7 +62,7 @@ router.post('/logout', (req, res) => {
   }
 });
 
-app.get("/api/user/:username", (req, res) => {
+router.get("/api/user/:username", (req, res) => {
   if (req.params.username) {
     console.info(`${req.method} request received to get a username`);
     const userUsername = req.params.username;
