@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Burger",
+    "description": "Our classic burger made with 100% ground beef.",
+    "price": 8.99,
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Chicken Club Sandwich",
+    "description": "Grilled chicken breast, bacon, lettuce, and tomato.",
+    "price": 9.99,
+    "category_id": 2
+  },
+  {
+    "id": 3,
+    "name": "Iced Tea",
+    "description": "Refreshing iced tea, perfect for a hot day.",
+    "price": 2.49,
+    "category_id": 3
+  }
+]
