@@ -1,47 +1,49 @@
 <div id="card-container">
-{{#each category |category|}}
-<div class="card hoverable margin-10">
-  <div class="card-image waves-effect waves-block waves-light">
-    <img class="activator" src="../images/{{category.filename}}">
-  </div>
-  <div class="card-content light-blue lighten-4">
-    <span class="card-title activator">
-      <strong>{{category.name}}</strong>
-    </span>
-  </div>
-  <div class="card-reveal">
-    <span class="card-title grey-text text-darken-4">
-      {{category.name}}
-      <i class="material-icons right">close</i>
-    </span>
+  {{#each category |category|}}
+  <div class="card hoverable margin-10">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="../images/{{category.filename}}">
+    </div>
+    <div class="card-content light-blue lighten-4">
+      <span class="card-title activator">
+        <strong>{{category.name}}</strong>
+      </span>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">
+        {{category.name}}
+        <i class="material-icons right">close</i>
+      </span>
+      
+      <table class="highlight">
+        <tbody>
+          {{#each item |item|}}
+          <tr>
+            <td id="item-name-{{item.id}}">{{item.name}}</td>
+            <td id="item-price-{{item.id}}">${{item.price}}</td>
+            <td>
+              <a class="btn-floating btn-small waves-effect waves-light red" id="decrementer-{{item.id}}">
+                <i class="material-icons">remove</i>
+              </a>
+              <label class="grey-text text-darken-4" id="item-count-{{item.id}}">0</label>
+              <a class="btn-floating btn-small waves-effect waves-light green" id="incrementer-{{item.id}}">
+                <i class="material-icons">add</i>
+              </a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     
-    <table class="highlight">
-      <tbody>
-        {{#each item |item|}}
-        <tr>
-          <td>{{item.name}}</td>
-          <td>{{item.price}}</td>
-          <td>
-            <a class="btn-floating btn-small waves-effect waves-light red" id="decrementer-{{item.id}}">
-              <i class="material-icons">remove</i>
-            </a>
-            <label class="grey-text text-darken-4" id="item-count-{{item.id}}">0</label>
-            <a class="btn-floating btn-small waves-effect waves-light green" id="incrementer-{{item.id}}">
-              <i class="material-icons">add</i>
-            </a>
-          </td>
-        </tr>
-        {{/each}}
-      </tbody>
-    </table>
-  
+    </div>
   </div>
+  {{/each}}
 </div>
-{{/each}}
-  <div class="margin-10">
-    <button id="create-order" class="btn waves-effect waves-light green accent-4" type="submit" name="action">Create Order
-      <i class="material-icons right">assignment</i>
-    </button>
-  </div>
+
+<div class="margin-10">
+  <button id="create-order" class="btn waves-effect waves-light green accent-4" type="submit" name="action">Create Order
+    <i class="material-icons right">assignment</i>
+  </button>
 </div>
+
 <script src="../Public/js/order.js"></script>
