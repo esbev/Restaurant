@@ -19,11 +19,11 @@
 				<a href="./main" class="brand-logo left margin-left-60">Restaurant Express</a>
 				<img src="../../Public/images/logo.png" class="brand-logo left opacity-80" width="50">
 				<ul id="nav-mobile" class="right">
-					{{#if !logged_in}}
+					{{#if logged_in}}
+					<li><button class="btn" id="logout">Logout</button></li>
+					{{else}}
 					<li><button class="btn" id="createAccount">Create Account</button></li>
 					<li><button class="btn" id="Login">Login</button></li>
-					{{else}}
-					<li><button class="btn" id="logout">Logout</button></li>
 					{{/if}}
 				</ul>
 			</div>
@@ -32,14 +32,13 @@
   
 	<main>
 		
-		{{#if !logged_in}}
+		{{#if logged_in}}
+			{{{ body }}}
+
+		{{else}}
 		<div class="center margin-10">
 			<img src="../../Public/images/logo.png" id="landing-img">
 		</div>
-		{{else}}
-
-			{{{ body }}}
-
 		{{/if}}
 
 	</main>
