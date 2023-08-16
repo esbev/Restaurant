@@ -17,7 +17,7 @@
 		<nav>
 			<div class="nav-wrapper">
 				<a href="./main" class="brand-logo left margin-left-60">Restaurant Express</a>
-				<img src="./images/logo.png" class="brand-logo left opacity-80" width="50">
+				
 				<ul id="nav-mobile" class="right">
 					{{#if logged_in}}
 					<li><button class="btn" id="logout">Logout</button></li>
@@ -35,6 +35,21 @@
 
 
 	</main>
+
+	<footer>
+		<nav>
+			<div class="nav-wrapper">
+				{{#if logged_in}}
+				<a href="#" class="brand-logo left margin-left-20"><i class="material-icons">arrow_upward</i></a>
+				{{/if}}
+				<ul id="nav-mobile" class="right">
+					<li><a href="">About Us</a></li>
+					<li><a href="">Careers</a></li>
+					<li><a href="">Contact Us</a></li>
+				</ul>
+			</div>
+		</nav>
+	</footer>
 
 	{{#if logged_in}}
 	<script src="./js/logout.js"></script>
