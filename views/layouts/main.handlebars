@@ -23,7 +23,7 @@
 					<li><button class="btn" id="logout">Logout</button></li>
 					{{else}}
 					<li><button class="btn" id="createAccount">Create Account</button></li>
-					<li><button class="btn" id="Login">Login</button></li>
+					<li><a class="btn" id="Login" href="/login">Login</a></li>
 					{{/if}}
 				</ul>
 			</div>
@@ -31,20 +31,15 @@
 	</header>
   
 	<main>
-		
-		{{#if logged_in}}
-			{{{ body }}}
+		{{{body}}}
 
-		{{else}}
-		<div class="center margin-10">
-			<img src="./images/logo.png" id="landing-img">
-		</div>
-		{{/if}}
 
 	</main>
 
 	{{#if logged_in}}
 	<script src="./js/logout.js"></script>
+	{{else}}
+	<script src="./js/login.js"></script>
 	{{/if}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
