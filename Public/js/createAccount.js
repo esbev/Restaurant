@@ -1,13 +1,21 @@
+console.log('Creating an account');
+
 const createAccountFormHandler = async (event) => {
     event.preventDefault();
   
-    const firstName = document.querySelector('#first-name').value.trim();
-    const lastName = document.querySelector('#last-name').value.trim();
-    const username = document.querySelector('#username').value.trim();
-    const password = document.querySelector('#password').value.trim();
+    const firstName = document.querySelector('#firstName').value;
+    const lastName = document.querySelector('#lastName').value;
+    const username = document.querySelector('#username').value;
+    const password = document.querySelector('#password').value;
+    console.log(firstName)
+    console.log(lastName)
+    console.log(username)
+    console.log(password)
   
     if (firstName && lastName && username && password) {
-      const response = await fetch('/api/users/login', {
+      console.log("got the info")
+
+      const response = await fetch('/api/users', {
         method: 'POST',
         body: JSON.stringify({ firstName, lastName, username, password }),
         headers: { 'Content-Type': 'application/json' },
@@ -23,4 +31,4 @@ const createAccountFormHandler = async (event) => {
   
   document
   .querySelector('.create-account-form')
-  .addEventListener('save', createAccountFormHandler);
+  .addEventListener('submit', createAccountFormHandler);

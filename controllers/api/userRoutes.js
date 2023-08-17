@@ -3,16 +3,16 @@ const { User } = require('../../models');
 
 router.post('/', async (req, res) => {
   try {
-    const dbUserData = await User.create({
+    const userData = await User.create({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
+      password: req.body.password
     });
-
+    console.log(userData)
     req.session.save(() => {
       req.session.loggedIn = true;
-
-      res.status(200).json(dbUserData);
+      res.status(200).json(userData);
     });
   } catch (err) {
     console.log(err);
@@ -22,32 +22,38 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
   try {
-    const userData = await User.findOne({ where: { email: req.body.email } });
+    const userData = await User.findOne({ where: { username: req.body.username } });
 
     if (!userData) {
+      console.log('Username does not match')
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
+      console.log(req.body.password)
+      console.log(userData)
+      console.log('password does not match')
       res
         .status(400)
-        .json({ message: 'Incorrect email or password, please try again' });
+        .json({ message: 'Incorrect username or password, please try again' });
       return;
     }
 
     req.session.save(() => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
-      
       res.json({ user: userData, message: 'You are now logged in!' });
+      console.log(req.session.logged_in)
+      console.log("You are logged in")
     });
 
   } catch (err) {
+    console.log(err)
     res.status(400).json(err);
   }
 });
@@ -62,21 +68,15 @@ router.post('/logout', (req, res) => {
   }
 });
 
-router.get("/api/user/:username", (req, res) => {
-  if (req.params.username) {
-    console.info(`${req.method} request received to get a username`);
-    const userUsername = req.params.username;
-    for (let i = 0; i < user.length; i++) {
-      const currentUser = user[i];
-      if (currentUser.username === userUsername) {
-        res.status(200).json(currentUser);
-        return;
-      }
-    }
-    res.status(404).send("Username not found");
-  } else {
-    res.status(400).send("User ID not provided");
+router.get("/:id", async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.params.id)
+    return res.json(userData)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err)
   }
 });
+  
 
 module.exports = router;
