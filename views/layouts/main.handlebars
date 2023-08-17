@@ -16,16 +16,16 @@
 	<header>
 		<nav>
 			<div class="nav-wrapper amber darken-2">
-				<a href="./main.handlebars" class="brand-logo left black-text"><strong>Restaurant Express</strong></a>
+				<a href="/" class="brand-logo left black-text"><strong>Restaurant Express</strong></a>
 				
 				<ul class="right">
 					{{#if loggedIn}}
 					<li>
-						<button class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout" href="logout">Logout</button>
+						<a class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout" href="logout">Logout</a>
 					</li>
 					{{else}}
-					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="createAccount" href="/createAccount">Create Account</button></li>
-					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="Login" href="/login">Login</button></li>
+					<li><a class="btn" id="createAccount" href="/createAccount">Create Account</button></li>
+					<li><a class="btn" id="Login" href="/login">Login</a></li>
 					{{/if}}
 				</ul>
 			</div>
