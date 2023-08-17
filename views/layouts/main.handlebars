@@ -15,24 +15,17 @@
 <body>
 	<header>
 		<nav>
-			<div class="nav-wrapper">
-				<a href="./" class="brand-logo left margin-left-60">Restaurant Express</a>
-				<img src="./images/logo.png" class="brand-logo left opacity-80" width="50">
-				<ul id="nav-mobile" class="right">
+			<div class="nav-wrapper amber darken-2">
+				<a href="./.handlebars" class="brand-logo left black-text"><strong>Restaurant Express</strong></a>
+				
+				<ul class="right">
 					{{#if loggedIn}}
 					<li>
-						<a class="btn" id="logout" href="logout">Logout</a>
+						<a class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout" href="logout">Logout</a>
 					</li>
 					{{else}}
-					<li>
-						<a class="btn" id="createAccount" href="/createAccount">Create Account</a>
-						</li>
-					<li>
-						<a class="btn" id="Login" href="/login">Login</a>
-						</li>
-					<li>
-						<a class="btn" id="logout" href="logout">Logout</a>
-					</li>
+					<li><a class="btn" id="createAccount" href="/createAccount">Create Account</button></li>
+					<li><a class="btn" id="Login" href="/login">Login</a></li>
 					{{/if}}
 				</ul>
 			</div>
@@ -44,6 +37,21 @@
 
 
 	</main>
+
+	<footer class="page-footer amber darken-2">
+		<nav class="amber darken-2">
+			<div class="">
+				{{#if logged_in}}
+				<a href="#" class="brand-logo left"><i class="material-icons black-text">arrow_upward</i></a>
+				{{/if}}
+				<ul id="" class="right">
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">About Us</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">Careers</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">Contact Us</button></li>
+				</ul>
+			</div>
+		</nav>
+	</footer>
 
 	{{#if logged_in}}
 	<script src="../..Public/js/logout.js"></script>
