@@ -8,7 +8,7 @@
 	<!--Import materialize.css-->
 	<link rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/css/materialize.min.css">
-	<link rel="stylesheet" type="text/css" href="../../Public/css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="./css/style.css"/>
 	<title>Restaurant Express</title>
 </head>
 
@@ -16,14 +16,23 @@
 	<header>
 		<nav>
 			<div class="nav-wrapper">
-				<a href="./main" class="brand-logo left margin-left-60">Restaurant Express</a>
+				<a href="./" class="brand-logo left margin-left-60">Restaurant Express</a>
 				<img src="./images/logo.png" class="brand-logo left opacity-80" width="50">
 				<ul id="nav-mobile" class="right">
-					{{#if logged_in}}
-					<li><button class="btn" id="logout">Logout</button></li>
+					{{#if loggedIn}}
+					<li>
+						<a class="btn" id="logout" href="logout">Logout</a>
+					</li>
 					{{else}}
-					<li><a class="btn" id="createAccount" href="/createAccount">Create Account</button></li>
-					<li><a class="btn" id="Login" href="/login">Login</a></li>
+					<li>
+						<a class="btn" id="createAccount" href="/createAccount">Create Account</a>
+						</li>
+					<li>
+						<a class="btn" id="Login" href="/login">Login</a>
+						</li>
+					<li>
+						<a class="btn" id="logout" href="logout">Logout</a>
+					</li>
 					{{/if}}
 				</ul>
 			</div>
@@ -37,9 +46,10 @@
 	</main>
 
 	{{#if logged_in}}
-	<script src="./js/logout.js"></script>
-	{{else}}
+	<script src="../..Public/js/logout.js"></script>
+	{{!-- {{else}}
 	<script src="./js/login.js"></script>
+	<script src="./js/createAccount.js"></script> --}}
 	{{/if}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
