@@ -40,8 +40,53 @@
   {{/each}}
 </div>
 
+{{!-- Modal for order conformation --}}
+	<div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Order for {{user.first_name}}</h4>
+      <table id="order-table" class="">
+        <tbody id="order-body">
+          <tr>
+            <td>Item</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Total</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table id="order-total-table">
+        <tbody>
+          <tr id="order-total-row">
+            <td></td>
+            <td></td>
+            <td><strong>Order Total:</strong></td>
+            <td><strong>$</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="modal-footer">
+      <button id="confirm-order"
+        class="btn modal-close left waves-effect yellow darken-2 grey-text text-darken-4 margin-top-10">
+        Confirm Order<i class="material-icons right">grade</i>
+      </button>
+      <button id="edit-order"
+        class="btn modal-close waves-effect blue accent-2 grey-text text-darken-4 margin-top-10">
+        Edit Order<i class="material-icons right">assignment</i>
+      </button>
+    </div>
+  </div>
+{{!-- end of modal --}}
+
 <div class="margin-10">
-  <button id="create-order" class="btn waves-effect waves-light green accent-4" type="submit" name="action">Create Order
+  <button
+    data-target="modal1"
+    id="create-order"
+    class="btn modal-trigger waves-effect grey-text text-darken-4 waves-dark green accent-4"
+    type="submit"
+    name="action">Create Order
     <i class="material-icons right">assignment</i>
   </button>
 </div>
