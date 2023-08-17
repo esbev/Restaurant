@@ -15,15 +15,15 @@
 <body>
 	<header>
 		<nav>
-			<div class="nav-wrapper">
-				<a href="./main" class="brand-logo left margin-left-60">Restaurant Express</a>
+			<div class="nav-wrapper amber darken-2">
+				<a href="./main.handlebars" class="brand-logo left black-text"><strong>Restaurant Express</strong></a>
 				
-				<ul id="nav-mobile" class="right">
+				<ul class="right">
 					{{#if logged_in}}
-					<li><button class="btn" id="logout">Logout</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout">Logout</button></li>
 					{{else}}
-					<li><a class="btn" id="createAccount" href="/createAccount">Create Account</button></li>
-					<li><a class="btn" id="Login" href="/login">Login</a></li>
+					<li class=""><button class="waves-effect waves-dark btn yellow accent-2 black-text padding-right-10" id="createAccount" href="../createAccount.handlebars">Create Account</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="Login" href="../login.handlebars">Login</button></li>
 					{{/if}}
 				</ul>
 			</div>
@@ -36,16 +36,16 @@
 
 	</main>
 
-	<footer>
-		<nav>
-			<div class="nav-wrapper">
+	<footer class="page-footer amber darken-2">
+		<nav class="amber darken-2">
+			<div class="">
 				{{#if logged_in}}
-				<a href="#" class="brand-logo left margin-left-20"><i class="material-icons">arrow_upward</i></a>
+				<a href="#" class="brand-logo left"><i class="material-icons black-text">arrow_upward</i></a>
 				{{/if}}
-				<ul id="nav-mobile" class="right">
-					<li><a href="">About Us</a></li>
-					<li><a href="">Careers</a></li>
-					<li><a href="">Contact Us</a></li>
+				<ul id="" class="right">
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">About Us</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">Careers</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">Contact Us</button></li>
 				</ul>
 			</div>
 		</nav>
