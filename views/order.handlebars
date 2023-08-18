@@ -1,5 +1,5 @@
 <div id="card-container">
-  {{#each category |category|}}
+  {{#each categories as |category|}}
   <div class="card hoverable margin-10 noselect">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="../images/{{category.filename}}">
@@ -17,7 +17,7 @@
       
       <table class="highlight">
         <tbody>
-          {{#each item |item|}}
+          {{#each items as |item|}}
           <tr>
             <td id="item-name-{{item.id}}">{{item.name}}</td>
             <td id="item-price-{{item.id}}">${{item.price}}</td>

@@ -20,7 +20,7 @@ const loginFormHandler = async (event) => {
 
       console.log(response)
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/order');
       } else {
         alert('Failed to log in');
       }
