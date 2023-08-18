@@ -1,56 +1,54 @@
-const router = require('express').Router();
-const withAuth = require('../utils/auth');
+const router = require("express").Router();
+const withAuth = require("../utils/auth");
 
-
-router.get('/order', (req,res)=>{
-  res.render('order')
-})
-
-router.get('/', async (req, res) => {
-
-    res.render('homepage', {
-      logged_in: req.session.logged_in
-    });
-
+router.get("/order", (req, res) => {
+  res.render("order", {
+    logged_in: req.session.logged_in,
+  });
 });
 
-router.get('/login', (req, res) => {
+router.get("/", async (req, res) => {
+  res.render("homepage", {
+    logged_in: req.session.logged_in,
+  });
+});
+
+router.get("/login", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
 
-  res.render('login');
+  res.render("login");
 });
 
-router.get('/createAccount', (req, res) => {
+router.get("/createAccount", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/');
+    res.redirect("/");
     return;
   }
 
-  res.render('createAccount');
+  res.render("createAccount");
 });
 
-router.get('/logout', async (req, res) => {
+router.get("/logout", async (req, res) => {
   try {
     if (req.session.logged_in) {
       await req.session.destroy();
-      res.redirect('/');
+      res.redirect("/");
     } else {
-      res.status(404).json({ message: 'Session not found' });
+      res.status(404).json({ message: "Session not found" });
     }
   } catch (err) {
-    console.error('Error during logout:', err);
+    console.error("Error during logout:", err);
     res.status(500).json(err);
   }
-  res.render('logout');
+  res.render("logout");
 });
 
 // router.get('/order', withAuth, async (req, res) => {
 //   if (!req.session.logged_in)
 //   res.redirect('/login')
 // })
-
 
 module.exports = router;
