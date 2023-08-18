@@ -19,13 +19,17 @@
 				<a href="/" class="brand-logo left black-text"><strong>Restaurant Express</strong></a>
 				
 				<ul class="right">
-					{{#if loggedIn}}
+					{{#if logged_in}}
 					<li>
-						<button class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout" href="logout">Logout</button>
+						<button class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout" href="/logout">Logout</button>
 					</li>
 					{{else}}
-					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="createAccount" href="/createAccount">Create Account</button></li>
-					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="Login" href="/login">Login</button></li>
+					<li>
+						<button class="waves-effect waves-dark btn yellow accent-2 black-text" id="createAccount" href="/createAccount">Create Account</button>
+					</li>
+					<li>
+						<button class="waves-effect waves-dark btn yellow accent-2 black-text" id="Login" href="/login">Login</button>
+					</li>
 					{{/if}}
 				</ul>
 			</div>
@@ -54,7 +58,7 @@
 	</footer>
 
 	{{#if logged_in}}
-	<script src="../..Public/js/logout.js"></script>
+	<script src="./js/logout.js"></script>
 	{{!-- {{else}}
 	<script src="./js/login.js"></script>
 	<script src="./js/createAccount.js"></script> --}}
