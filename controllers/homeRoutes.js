@@ -1,10 +1,22 @@
 const router = require("express").Router();
+const {User, Category, Order, Item} = require("../models")
 const withAuth = require("../utils/auth");
 
-router.get("/order", (req, res) => {
-  res.render("order", {
-    logged_in: req.session.logged_in,
-  });
+router.get("/order", async (req, res) => {
+  try {
+    const categoryData = await Category.findAll()
+    const categories = categoryData.map((category) => category.get({plain:true}))
+
+    const itemData = await Item.findAll()
+    const items = itemData.map((item) => item.get({plain:true}))
+    res.render("order", {
+      logged_in: req.session.logged_in,
+      categories,
+      items
+    });
+  } catch (err) {
+    res.status(500).json(err)
+  }
 });
 
 router.get("/", async (req, res) => {
