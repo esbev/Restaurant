@@ -21,14 +21,14 @@
 				<ul class="right">
 					{{#if logged_in}}
 					<li>
-						<button class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout" href="/logout">Logout</button>
+						<a href="/logout"><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout">Logout</button></a>
 					</li>
 					{{else}}
 					<li>
-						<button class="waves-effect waves-dark btn yellow accent-2 black-text" id="createAccount" href="/createAccount">Create Account</button>
+						<a href="/createAccount"><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="createAccount">Create Account</button></a>
 					</li>
 					<li>
-						<button class="waves-effect waves-dark btn yellow accent-2 black-text" id="Login" href="/login">Login</button>
+						<a href="/login"><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="Login">Login</button></a>
 					</li>
 					{{/if}}
 				</ul>
@@ -59,9 +59,9 @@
 
 	{{#if logged_in}}
 	<script src="./js/logout.js"></script>
-	{{!-- {{else}}
+	{{else}}
 	<script src="./js/login.js"></script>
-	<script src="./js/createAccount.js"></script> --}}
+	<script src="./js/createAccount.js"></script>
 	{{/if}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
