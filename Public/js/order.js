@@ -1,9 +1,30 @@
 
 $(document).ready(function(){
-  $(".modal").modal({dismissable: false});
+  $(".modal").modal();
 });
 
-let instance = M.Modal.getInstance(elem);
+let orderInstance = M.Modal.getInstance(elem);
+
+const clearOrderTable = () => {
+  let lastOrderItem = $("#order-body").children().last().attr("id");//get last row id
+  if (!isNaN(lastOrderItem)) {//if last row id is a number
+    for (let i = 0; i <= lastOrderItem; i++) {//then loop through each item row
+      $("#" + i).remove();//and remove item row
+    };
+  };
+};
+
+const resetQuantities = () => {
+  let doesExist = true;
+  let index = 1;
+
+  while (doesExist) {
+    if ($("#item-count-" + index).val()) {//if element exists
+      $("#item-count-" + index).val("0");//then change the value to 0
+      index++;
+    } else { doesExist = false; }
+  };
+}
 
 const getOrderItems = () => {
 
@@ -24,20 +45,15 @@ const getOrderItems = () => {
         itemCounter++;
         index++;
       }
-    } else { doesExist = false; }//if row doesn't exist exit loop
+    } else { doesExist = false; }
 
   };
   return nameArr, priceArr, quantityArr;
 };
 
-const buildUserOrder = (nameArr, priceArr, quantityArr) => {
-  //clear order table before populating
-  let lastOrderItem = $("#order-body").children().last().attr("id");
-  if (!isNaN(lastOrderItem)) {
-    for (let i = 0; i <= lastOrderItem; i++) {
-      $("#" + i).remove();
-    };
-  };
+const populateOrder = (nameArr, priceArr, quantityArr) => {
+  
+  clearOrderTable();
 
   for (i in nameArr) {//build table row for each item
     let itemRowEl = `<tr id="${i}">`
@@ -46,7 +62,7 @@ const buildUserOrder = (nameArr, priceArr, quantityArr) => {
     + `<td>${quantityArr[i]}</td>`
     + `<//tr>`;
 
-    $("#order-body").append(itemRowEl);//add row to Order modal
+    $("#order-body").append(itemRowEl);//add row to Order table
   }
 
   let orderTotal = priceArr.reduce(function (x, y) { return x + y; }, 0);//get order total
@@ -70,10 +86,10 @@ $("#card-container").on("click", (event) => {
 
 $("#create-order").on("click", async () => {
   getOrderItems(nameArr, priceArr, quantityArr);
-  buildUserOrder(nameArr, priceArr, quantityArr);
-  instance.open();
+  populateOrder(nameArr, priceArr, quantityArr);
+  orderInstance.open();
 });
 
 $("#confirm-order").on("click", () => {
-
+  resetQuantities();
 })
