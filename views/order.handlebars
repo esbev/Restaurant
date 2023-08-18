@@ -17,21 +17,26 @@
       
       <table class="highlight">
         <tbody>
-          {{#each items as |item|}}
-          <tr>
-            <td id="item-name-{{item.id}}">{{item.name}}</td>
-            <td id="item-price-{{item.id}}">${{item.price}}</td>
-            <td>
-              <a class="btn-floating btn-small waves-effect waves-light red" id="decrementer-{{item.id}}">
-                <i class="material-icons">remove</i>
-              </a>
-              <label class="grey-text text-darken-4" id="item-count-{{item.id}}">0</label>
-              <a class="btn-floating btn-small waves-effect waves-light green" id="incrementer-{{item.id}}">
-                <i class="material-icons">add</i>
-              </a>
-            </td>
-          </tr>
-          {{/each}}
+          {{!-- {{#each items as |item|}} --}}
+          {{#with items as |item|}}
+            {{#each item}}
+              {{#if (compare item.category_id category.id)}}
+              <tr>
+                <td id="item-name-{{item.id}}">{{item.name}}</td>
+                <td id="item-price-{{item.id}}">${{item.price}}</td>
+                <td>
+                  <a class="btn-floating btn-small waves-effect waves-light red" id="decrementer-{{item.id}}">
+                    <i class="material-icons">remove</i>
+                  </a>
+                  <label class="grey-text text-darken-4" id="item-count-{{item.id}}">0</label>
+                  <a class="btn-floating btn-small waves-effect waves-light green" id="incrementer-{{item.id}}">
+                    <i class="material-icons">add</i>
+                  </a>
+                </td>
+              </tr>
+              {{/if}}
+            {{/each}}
+          {{/with}}
         </tbody>
       </table>
     
