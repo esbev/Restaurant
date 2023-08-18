@@ -1,6 +1,6 @@
 <div id="card-container">
   {{#each category |category|}}
-  <div class="card hoverable margin-10">
+  <div class="card hoverable margin-10 noselect">
     <div class="card-image waves-effect waves-block waves-light">
       <img class="activator" src="../images/{{category.filename}}">
     </div>
@@ -43,7 +43,11 @@
 {{!-- Modal for order conformation --}}
 	<div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4>Order for {{user.first_name}}</h4>
+      <h4>Order for {{user.first_name}}
+        <a class="modal-close waves-effect waves-dark black-text">
+          <i class="material-icons right noselect">close</i>
+        </a>
+      </h4>
       <table id="order-table" class="">
         <tbody id="order-body">
           <tr>
@@ -70,7 +74,7 @@
     <div class="modal-footer">
       <button id="confirm-order"
         class="btn modal-close left waves-effect yellow darken-2 grey-text text-darken-4 margin-top-10">
-        Confirm Order<i class="material-icons right">grade</i>
+        Place Order<i class="material-icons right">grade</i>
       </button>
       <button id="edit-order"
         class="btn modal-close waves-effect blue accent-2 grey-text text-darken-4 margin-top-10">
