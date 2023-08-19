@@ -22,6 +22,9 @@ Category.init(
     },
     description: {
       type: DataTypes.STRING,
+    },
+    cardColor: {
+      type: DataTypes.STRING,
     }
   },
   {

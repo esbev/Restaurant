@@ -4,48 +4,55 @@
     "name": "Beverages",
     "label": "Thirst Quenchers",
     "filename": "beverages.jpg",
-    "description": "Refreshing beverages to quench your thirst."
+    "description": "Refreshing beverages to quench your thirst.",
+    "card_color": "light-blue lighten-4"
   },
   {
     "id": 2,
     "name": "Appetizers",
     "label": "Snacks",
     "filename": "appetizers.jpg",
-    "description": "Delicious appetizers to start your meal."
+    "description": "Delicious appetizers to start your meal.",
+    "card_color": "yellow lighten-4"
   },
   {
     "id": 3,
     "name": "Sandwiches",
     "label": "Ergonomic Handhelds",
     "filename": "sandwiches.jpg",
-    "description": "A variety of mouthwatering sandwiches for every taste."
+    "description": "A variety of mouthwatering sandwiches for every taste.",
+    "card_color": "brown lighten-4"
   },
   {
     "id": 4,
     "name": "Beef and Chicken",
     "label": "One if by land",
     "filename": "land.jpg",
-    "description": "Handheld delights featuring beef and chicken."
+    "description": "Handheld delights featuring beef and chicken.",
+    "card_color": "light-green accent-1"
   },
   {
     "id": 5,
     "name": "Seafood",
     "label": "Two if by sea",
     "filename": "seafood.jpg",
-    "description": "Fresh seafood dishes for seafood enthusiasts."
+    "description": "Fresh seafood dishes for seafood enthusiasts.",
+    "card_color": "teal lighten-4"
   },
   {
     "id": 6,
     "name": "Pasta",
     "label": "Send Noodz",
     "filename": "pasta.jpg",
-    "description": "Hearty pasta dishes to satisfy your cravings."
+    "description": "Hearty pasta dishes to satisfy your cravings.",
+    "card_color": "purple lighten-4"
   },
   {
     "id": 7,
     "name": "Desserts",
     "label": "Straight to the Waist",
     "filename": "desserts.jpg",
-    "description": "Indulgent desserts that you won't want to waste."
+    "description": "Indulgent desserts that you won't want to waste.",
+    "card_color": "pink lighten-4"
   }
 ]
