@@ -12,5 +12,12 @@
     "firstName": "Jane",
     "lastName": "Smith",
     "item_ordered": 1
+  },
+  {
+    "username": "esbev",
+    "password": "mypass123",
+    "firstName": "Eric",
+    "lastName": "Beverly",
+    "item_ordered": 1
   }
 ]

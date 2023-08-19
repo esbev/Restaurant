@@ -1,15 +1,19 @@
 <div class="margin-10">
   <button
     data-target="modal1"
-    id="create-order"
+    id="view-order"
     class="btn modal-trigger waves-effect grey-text text-darken-4 waves-dark green accent-4"
     type="submit"
-    name="action">Create Order
+    name="action">View order details
     <i class="material-icons right">assignment</i>
+  </button>
+  <button
+    id="current-total"
+    class="btn-flat grey-text text-darken-4 white right">Order Total: $
   </button>
 </div>
 
-<div id="card-container">
+<div id="menu-container">
   {{#each categories as |category|}}
   <div class="card hoverable margin-10 noselect">
     <div class="card-image waves-effect waves-block waves-light">
@@ -30,15 +34,15 @@
         <tbody>
           {{#each items as |item|}}
               <tr>
-                <td id="item-name-{{item.id}}">{{item.name}}</td>
+                <td id="item-name-{{item.id}}" class="tooltipped" data-tooltip="{{item.description}}">{{item.name}}</td>
                 <td id="item-price-{{item.id}}">${{item.price}}</td>
                 <td>
-                  <button class="btn-floating btn-small waves-effect waves-light red" id="decrementer-{{item.id}}">
-                    <i class="material-icons">remove</i>
+                  <button class="btn-floating btn-small waves-effect waves-light red">
+                    <i id="decrementer-{{item.id}}" class="material-icons">remove</i>
                   </button>
-                  <label class="grey-text text-darken-4" id="item-count-{{item.id}}">0</label>
-                  <button class="btn-floating btn-small waves-effect waves-light green" id="incrementer-{{item.id}}">
-                    <i class="material-icons">add</i>
+                  <label class="grey-text text-darken-4" id="item-qty-{{item.id}}">0</label>
+                  <button class="btn-floating btn-small waves-effect waves-light green">
+                    <i  id="incrementer-{{item.id}}" class="material-icons">add</i>
                   </button>
                 </td>
               </tr>
@@ -54,14 +58,14 @@
 {{!-- Modal 1 for order build --}}
 	<div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4>Order for {{user.first_name}}
+      <h4>Order details
         <a class="modal-close waves-effect waves-dark black-text">
           <i class="material-icons right noselect">close</i>
         </a>
       </h4>
       <table id="order-table">
         <tbody id="order-body">
-          <tr>
+          <tr id="table-headers">
             <td>Item</td>
             <td>Price</td>
             <td>Quantity</td>
@@ -76,7 +80,7 @@
             <td></td>
             <td></td>
             <td><strong>Order Total:</strong></td>
-            <td><strong>$</strong></td>
+            <td><strong id="order-total-amt">$0</strong></td>
           </tr>
         </tbody>
       </table>
@@ -91,7 +95,7 @@
       </button>
       <button id="edit-order"
         class="btn modal-close waves-effect blue accent-2 grey-text text-darken-4 margin-top-10">
-        Edit Order<i class="material-icons right">assignment</i>
+        Continue Ordering<i class="material-icons right">assignment</i>
       </button>
     </div>
   </div>

@@ -1,5 +1,3 @@
-console.log('This is my login');
-
 const loginFormHandler = async (event) => {
     event.preventDefault();
   
