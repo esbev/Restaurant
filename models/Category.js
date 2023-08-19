@@ -23,7 +23,7 @@ Category.init(
     description: {
       type: DataTypes.STRING,
     },
-    cardColor: {
+    card_color: {
       type: DataTypes.STRING,
     }
   },
