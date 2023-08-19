@@ -3,7 +3,7 @@ $(document).ready(function(){
   $(".modal").modal();
 });
 
-let orderInstance = M.Modal.getInstance(elem);
+let orderInstance = M.Modal.getInstance(elems);
 
 const clearOrderTable = () => {
   let lastOrderItem = $("#order-body").children().last().attr("id");//get last row id
@@ -74,7 +74,9 @@ const populateOrder = (nameArr, priceArr, quantityArr) => {
 //plus or minus buttons
 $("#card-container").on("click", (event) => {
   let buttonId = $(event.target).attr("id");//get element id string
+  console.log(buttonId);
   let idIndex = buttonId.split("-");//split element id into string array
+  
   let quantity = parseInt($("#item-count-" + idIndex[1]).val());//get the value of the current quantity
 
   if (buttonId.includes("incrementer")) {//if the incrementer button is clicked
