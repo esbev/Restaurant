@@ -17,10 +17,7 @@
       
       <table class="highlight">
         <tbody>
-          {{!-- {{#each items as |item|}} --}}
-          {{#with items as |item|}}
-            {{#each item}}
-              {{#if (compare item.category_id category.id)}}
+          {{#each items as |item|}}
               <tr>
                 <td id="item-name-{{item.id}}">{{item.name}}</td>
                 <td id="item-price-{{item.id}}">${{item.price}}</td>
@@ -34,9 +31,7 @@
                   </a>
                 </td>
               </tr>
-              {{/if}}
             {{/each}}
-          {{/with}}
         </tbody>
       </table>
     

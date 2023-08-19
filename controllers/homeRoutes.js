@@ -4,15 +4,19 @@ const withAuth = require("../utils/auth");
 
 router.get("/order", async (req, res) => {
   try {
-    const categoryData = await Category.findAll()
+    const categoryData = await Category.findAll({
+      include: [
+        {
+          model: Item
+          // where: {category_id: Category.Id}
+        }
+      ]
+    })
     const categories = categoryData.map((category) => category.get({plain:true}))
 
-    const itemData = await Item.findAll()
-    const items = itemData.map((item) => item.get({plain:true}))
     res.render("order", {
       logged_in: req.session.logged_in,
-      categories,
-      items
+      categories
     });
   } catch (err) {
     res.status(500).json(err)
