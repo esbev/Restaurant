@@ -1,14 +1,18 @@
 const router = require("express").Router();
-const {User, Category, Order, Item} = require("../models")
+const {Category, Item} = require("../models")
 const withAuth = require("../utils/auth");
 
-router.get("/order", async (req, res) => {
+router.get("/order", withAuth, async (req, res) => {
+  if (!req.session.logged_in) {
+    res.redirect('/login');
+    return;
+  }
+
   try {
     const categoryData = await Category.findAll({
       include: [
         {
           model: Item
-          // where: {category_id: Category.Id}
         }
       ]
     })
@@ -61,10 +65,5 @@ router.get("/logout", async (req, res) => {
   }
   res.render("logout");
 });
-
-// router.get('/order', withAuth, async (req, res) => {
-//   if (!req.session.logged_in)
-//   res.redirect('/login')
-// })
 
 module.exports = router;
