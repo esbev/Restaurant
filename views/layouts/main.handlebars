@@ -21,14 +21,25 @@
 				<ul class="right">
 					{{#if logged_in}}
 					<li>
-						<a href="/logout"><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="logout">Logout</button></a>
+						<button 
+              class="waves-effect waves-dark btn yellow accent-2 black-text" 
+              id="logout">Logout
+            </button>
 					</li>
 					{{else}}
 					<li>
-						<a href="/createAccount"><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="createAccount">Create Account</button></a>
+						<button 
+              onclick = "window.location.href='/createAccount';" 
+              class="waves-effect waves-dark btn yellow accent-2 black-text" 
+              id="createAccount">Create Account
+            </button>
 					</li>
 					<li>
-						<a href="/login"><button class="waves-effect waves-dark btn yellow accent-2 black-text" id="Login">Login</button></a>
+						<button 
+              onclick = "window.location.href='/login';"
+						  class="waves-effect waves-dark btn yellow accent-2 black-text" 
+              id="Login">Login
+            </button>
 					</li>
 					{{/if}}
 				</ul>
