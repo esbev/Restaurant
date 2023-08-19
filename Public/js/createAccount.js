@@ -1,5 +1,3 @@
-console.log('Creating an account');
-
 const createAccountFormHandler = async (event) => {
     event.preventDefault();
   
