@@ -108,7 +108,7 @@ $("#menu-container").on("click", (event) => {
   }
 });
 
-$("#confirm-order").on("click", () => {
+$("#place-order").on("click", () => {
   resetQuantities();
   clearOrderTable();
 })
