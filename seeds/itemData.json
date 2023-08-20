@@ -67,115 +67,115 @@
   },
   {
     "name": "Quesadilla",
-    "description": "none",
+    "description": "A healthy amount of chicken and cheese in a grilled tortilla",
     "price": 6.99,
     "category_id": 3
   },
   {
     "name": "Meatloaf Wrap",
-    "description": "none",
+    "description": "Oh yes we did. Mom's meatloaf wrapped up in a tortilla",
     "price": 8.49,
     "category_id": 3
   },
   {
     "name": "Avocado Toast",
-    "description": "none",
+    "description": "One whole avocado sliced and placed on texas toast",
     "price": 10.49,
     "category_id": 3
   },
   {
     "name": "12 oz Ribeye",
-    "description": "none",
+    "description": "Grilled to perfection",
     "price": 18.49,
     "category_id": 4
   },
   {
     "name": "8 oz Filet",
-    "description": "none",
+    "description": "Tender choice filet cooked to your liking",
     "price": 17.49,
     "category_id": 4
   },
   {
     "name": "Grilled Chicken Breast",
-    "description": "none",
+    "description": "Grilled chicken breast with sauteed onions and peppers",
     "price": 13.49,
     "category_id": 4
   },
   {
     "name": "Smoked Lamb Chops",
-    "description": "none",
+    "description": "Seasoned with love and smoked for hours",
     "price": 21.99,
     "category_id": 4
   },
   {
     "name": "Maine Lobster Tail",
-    "description": "none",
+    "description": "A buttery broiled Maine lobster tail",
     "price": 24.99,
     "category_id": 5
   },
   {
     "name": "Grilled Salmon",
-    "description": "none",
+    "description": "Alaskan Salmon grilled with lemon pepper",
     "price": 15.99,
     "category_id": 5
   },
   {
     "name": "Snow Crab Legs",
-    "description": "none",
+    "description": "A pound of steamed snow crab legs served with drawn butter",
     "price": 18.99,
     "category_id": 5
   },
   {
     "name": "Spaghetti and Meatballs",
-    "description": "none",
+    "description": "Beef and pork meatballs served on spaghetti with homemade marinara",
     "price": 12.99,
     "category_id": 6
   },
   {
     "name": "Chicken Alfredo",
-    "description": "none",
+    "description": "Sliced chicken served with fettuccine and homemade pesto alfredo",
     "price": 11.99,
     "category_id": 6
   },
   {
     "name": "Veggie Primavera",
-    "description": "none",
+    "description": "7 grilled vegetables tossed in garlic and olive oil on top of angel hair pasta",
     "price": 10.99,
     "category_id": 6
   },
   {
     "name": "Lasagna",
-    "description": "none",
+    "description": "Layers and layers of meat, cheese, and pasta",
     "price": 14.49,
     "category_id": 6
   },
   {
     "name": "Chocolate Cake",
-    "description": "none",
+    "description": "6 warm layers of chocolate cake homemade fudge icing",
     "price": 4.59,
     "category_id": 7
   },
   {
     "name": "Canoli",
-    "description": "none",
+    "description": "Homemade just like your Aunt did in Sicily",
     "price": 4.99,
     "category_id": 7
   },
   {
     "name": "Key Lime Pie",
-    "description": "none",
+    "description": "A classic dessert that all are sure to enjoy",
     "price": 4.99,
     "category_id": 7
   },
   {
     "name": "Peach Cobbler",
-    "description": "none",
+    "description": "We went to georgia and picked the best peaches our selves",
     "price": 4.79,
     "category_id": 7
   },
   {
     "name": "Wedding Cake",
-    "description": "none",
+    "description": "We bake your cake and you get to eat it, even if it's not your anniversary",
     "price": 6.49,
     "category_id": 7
   }

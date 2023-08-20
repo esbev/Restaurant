@@ -19,5 +19,26 @@
     "firstName": "Eric",
     "lastName": "Beverly",
     "item_ordered": 1
+  },
+  {
+    "username": "cmdnguyen",
+    "password": "mypass123",
+    "firstName": "Catherine",
+    "lastName": "Nguyen",
+    "item_ordered": 1
+  },
+  {
+    "username": "theiananderson",
+    "password": "mypass123",
+    "firstName": "Ian",
+    "lastName": "Anderson",
+    "item_ordered": 1
+  },
+  {
+    "username": "nightsha",
+    "password": "mypass123",
+    "firstName": "Sean",
+    "lastName": "Willis",
+    "item_ordered": 1
   }
 ]
