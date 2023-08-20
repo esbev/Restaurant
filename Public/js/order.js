@@ -21,6 +21,7 @@ const updateItemQty = (buttonId) => {
       $("#item-qty-" + itemId).text(itemQuantity + 1);//add 1 and display the new quantity
       itemQuantity++;
       updateOrder(itemId, itemName, itemPrice, itemQuantity);
+      updateTotal(itemPrice, "add");
     } else if (buttonId.includes("decrementer") && itemQuantity > 0) {//if the decrementer is clicked and the quantity is not 0
       $("#item-qty-" + itemId).text(itemQuantity - 1);//subtract 1 and display the new quantity
       if (itemQuantity - 1 === 0){
@@ -28,6 +29,7 @@ const updateItemQty = (buttonId) => {
       } else {
         itemQuantity--;
         updateOrder(itemId, itemName, itemPrice, itemQuantity);
+        updateTotal(itemPrice, "subtract");
       }
     }
   }
@@ -39,7 +41,6 @@ const updateOrder = (itemId, itemName, itemPrice, itemQuantity) => {
     $("#price-" + itemId).text("$" + itemPrice);
     $("#quantity-" + itemId).text(itemQuantity);
     $("#total-" + itemId).text("$" + (itemPrice * itemQuantity));
-    updateTotal(itemPrice, "add");
   } else {
     let itemRowEl = `<tr id="${itemId}">`
     + `<td id="name-${itemId}">${itemName}</td>`
@@ -47,9 +48,7 @@ const updateOrder = (itemId, itemName, itemPrice, itemQuantity) => {
     + `<td id="quantity-${itemId}">${itemQuantity}</td>`
     + `<td id="total-${itemId}">$${itemQuantity * itemPrice}</td>`
     + `<//tr>`;
-
     $("#order-body").append(itemRowEl);//add row to Order table
-    updateTotal(itemPrice, "add");
   }
 };
 
@@ -64,15 +63,38 @@ const updateTotal = (itemPrice, operation) => {
       newTotal = currentTotal + itemPrice;
       break;
   }
-  
   $("#order-total-amt").text("$" + newTotal);
   $("#current-total").text("Order Total: $ " + newTotal);
-  
 };
 
 const removeFromOrder = (itemId, itemPrice) => {
   updateTotal(itemPrice, "subtract");
   $("#" + itemId).remove();
+};
+
+const getOrderDetails = () => {
+  let isANumber = true;
+  let nameArr = [];
+  let priceArr = [];
+  let quantityArr = [];
+  while (isANumber) {
+    let lastOrderItem = parseInt($("#order-body").children().last().attr("id"));//get last row id
+
+    if (!isNaN(lastOrderItem)) {//if last row id is a number
+      nameArr.unshift($("#name-" + lastOrderItem).text());
+      priceArr.unshift($("#price-" + lastOrderItem).text());
+      quantityArr.unshift($("#quantity-" + lastOrderItem).text());
+      $("#" + lastOrderItem).remove();
+    } else {
+      isANumber = false;
+    };
+  };
+  console.log(nameArr);
+  console.log(priceArr);
+  console.log(quantityArr);
+  $("#order-total-amt").text("$");
+  $("#current-total").text("Order Total: $0");
+  return nameArr, priceArr, quantityArr;
 };
 
 const clearOrderTable = () => {//change this to clear rows that have a number
@@ -109,6 +131,7 @@ $("#menu-container").on("click", (event) => {
 });
 
 $("#place-order").on("click", () => {
+  getOrderDetails();
+  // clearOrderTable();
   resetQuantities();
-  clearOrderTable();
 })
