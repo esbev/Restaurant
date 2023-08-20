@@ -36,9 +36,9 @@ const updateItemQty = (buttonId) => {
 const updateOrder = (itemId, itemName, itemPrice, itemQuantity) => {
   
   if ($("#" + itemId).attr("id") == itemId) {
-    $("#price-" + itemId).text(itemPrice);
+    $("#price-" + itemId).text("$" + itemPrice);
     $("#quantity-" + itemId).text(itemQuantity);
-    $("#total-" + itemId).text(itemPrice * itemQuantity);
+    $("#total-" + itemId).text("$" + (itemPrice * itemQuantity));
     updateTotal(itemPrice, "add");
   } else {
     let itemRowEl = `<tr id="${itemId}">`
@@ -82,7 +82,7 @@ const clearOrderTable = () => {//change this to clear rows that have a number
     let lastOrderItem = parseInt($("#order-body").children().last().attr("id"));//get last row id
 
     if (!isNaN(lastOrderItem)) {//if last row id is a number
-      $("#" + i).remove();
+      $("#" + lastOrderItem).remove();
     } else {
       isANumber = false;
     };
