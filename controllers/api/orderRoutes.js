@@ -26,7 +26,7 @@ router.delete('/:id', async (req, res) => {
       });
   
       if (!orderData) {
-        res.status(404).json({ message: 'No blog post found with this id!' });
+        res.status(404).json({ message: 'No order was found with this id!' });
         return;
       }
   
@@ -36,4 +36,25 @@ router.delete('/:id', async (req, res) => {
     }
   });
   
+  router.get("/:id", async (req, res) => {
+    try {
+      const orderData = await Order.findByPk(req.params.id)
+      return res.json(orderData)
+    } catch (err) {
+      console.log(err)
+      res.status(500).json(err)
+    }
+  });
+
+  router.get("/", async (req, res) => {
+    try {
+      const orderData = await Order.findAll()
+      return res.json(orderData)
+    } catch (err) {
+      console.log(err)
+      res.status(500).json(err)
+    }
+  });
+
+
   module.exports = router;
