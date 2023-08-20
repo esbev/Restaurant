@@ -1,49 +1,49 @@
 [
   {
     "name": "Bottled Water",
-    "description": "none",
+    "description": "Straight from the earth",
     "price": 1.50,
     "category_id": 1
   },
   {
     "name": "Iced Tea",
-    "description": "none",
+    "description": "Classic home brewed",
     "price": 2.50,
     "category_id": 1
   },
   {
     "name": "Soda",
-    "description": "none",
+    "description": "Refreshing bubbly drink",
     "price": 2.5,
     "category_id": 1
   },
   {
     "name": "Orange juice",
-    "description": "none",
+    "description": "Hand squeezed with sanitized hands",
     "price": 3.00,
     "category_id": 1
   },
   {
     "name": "Chips and Queso",
-    "description": "none",
+    "description": "Creamy homemade cheese dip",
     "price": 6.99,
     "category_id": 2
   },
   {
     "name": "Fried Pickles",
-    "description": "none",
+    "description": "Battered and fried pickled cucumbers",
     "price": 5.99,
     "category_id": 2
   },
   {
     "name": "Wings",
-    "description": "none",
+    "description": "Traditional buffalo wings",
     "price": 9.99,
     "category_id": 2
   },
   {
     "name": "Edamame",
-    "description": "none",
+    "description": "Steamed soy bean pods",
     "price": 4.99,
     "category_id": 2
   },
