@@ -7,7 +7,7 @@
   },
   {
     "name": "Iced Tea",
-    "description": "Classic home brewed",
+    "description": "Refreshing iced tea, perfect for a hot day.",
     "price": 2.50,
     "category_id": 1
   },
@@ -61,13 +61,13 @@
   },
   {
     "name": "Veggie Wrap",
-    "description": "Refreshing iced tea, perfect for a hot day.",
+    "description": "Fresh tasty vegetables cuddled up tight in a veggie tortilla",
     "price": 7.99,
     "category_id": 3
   },
   {
     "name": "Quesadilla",
-    "description": "A healthy amount of chicken and cheese in a grilled tortilla",
+    "description": "A healthy amount of chicken and cheese in a flour tortilla",
     "price": 6.99,
     "category_id": 3
   },
