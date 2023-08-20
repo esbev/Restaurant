@@ -16,9 +16,25 @@
 	<header>
 		<nav>
 			<div class="nav-wrapper amber darken-2">
-				<a class="brand-logo left black-text"><strong>Restaurant Express</strong></a>
+				<a class="brand-logo left yellow-text margin-left-20"><strong>Restaurant Express</strong></a>
 				
-				<ul class="right">
+        <a class='dropdown-trigger right margin-right-30' href='#' data-target='dropdown1'><i class="material-icons yellow-text right">dehaze</i></a>
+        
+        {{#if logged_in}}
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a  class="black-text" id="logout">Logout</a></li>
+        </ul>
+        {{else}}
+        <ul id='dropdown1' class='dropdown-content'>
+          <li><a  class="black-text" href="/createAccount">Create Account</a></li>
+          <li><a  class="black-text" href="/login">Login</a></li>
+        </ul>
+        {{/if}}
+        
+
+
+
+				{{!-- <ul class="right">
 					{{#if logged_in}}
 					<li>
 						<button 
@@ -42,7 +58,7 @@
             </button>
 					</li>
 					{{/if}}
-				</ul>
+				</ul> --}}
 			</div>
 		</nav>
 	</header>
@@ -60,9 +76,9 @@
 				<a href="#" class="brand-logo left"><i class="material-icons black-text">arrow_upward</i></a>
 				{{/if}}
 				<ul id="" class="right">
-					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">About Us</button></li>
-					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">Careers</button></li>
-					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text">Contact Us</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text margin-right-30">About Us</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text margin-right-30">Careers</button></li>
+					<li><button class="waves-effect waves-dark btn yellow accent-2 black-text margin-right-30">Contact Us</button></li>
 				</ul>
 			</div>
 		</nav>
@@ -70,12 +86,10 @@
 
 	{{#if logged_in}}
 	<script src="./js/logout.js"></script>
-	{{!-- {{else}}
-	<script src="./js/login.js"></script>
-	<script src="./js/createAccount.js"></script> --}}
 	{{/if}}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.1-alpha/dist/js/materialize.min.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 </html>
