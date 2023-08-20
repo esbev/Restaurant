@@ -1,4 +1,6 @@
-// import fs = require('fs');
+// const path = require("path");
+// const fs = require("fs");
+// const uniqid = require("uniqid");
 
 $(document).ready(function(){
   $(".modal").modal();
@@ -8,8 +10,8 @@ $(document).ready(function(){
   $('.tooltipped').tooltip();
 });
 
-let elems = "";
-let orderInstance = M.Modal.getInstance(elems);
+// let elems = "";
+// let orderInstance = M.Modal.getInstance(elems);
 
 const updateItemQty = (buttonId) => {
   if (buttonId.includes("incrementer") || buttonId.includes("decrementer")) {
@@ -74,9 +76,6 @@ const removeFromOrder = (itemId, itemPrice) => {
 };
 
 const getOrderDetails = async () => {
-  
-  
-  
   let isANumber = true;
   let newItem = {};
   let itemArr = [];
@@ -105,21 +104,32 @@ const getOrderDetails = async () => {
   $("#order-total-amt").text("$");
   $("#current-total").text("Order Total: $0");
   resetQuantities();
+  document.location.reload()
+  // const orderId = uniqid();
 
-  const response = await fetch('/api/orders' , {
-    method: 'POST',
-    headers: {
-        'Content-Type' : 'application/json'
-    },
-    body: JSON.stringify(itemArr),
+  // const response = await fetch('/api/orders' , {
+  //   method: 'POST',
+  //   headers: { 'Content-Type' : 'application/json' },
+  //   body: `order_${orderId}.json`,
+  // });
+
+  // writeOrderFile(JSON.stringify(itemArr), orderId);
+
+  // if (response.ok){
+  //   document.location.reload()
+  // } else{
+  //   console.log("Error ")
+  // }
+
+};
+
+const writeOrderFile = (orderDetails, orderId) => {
+  
+  const fileName = `order_${orderId}.json`;
+
+  fs.writeFile(fileName, orderDetails, (err) => {
+    err ? console.log(err) : console.log('Your order has been saved');
   });
-
-  if (response.ok){
-    document.location.reload()
-  } else{
-    console.log("Error ")
-  }
-
 };
 
 const resetQuantities = () => {

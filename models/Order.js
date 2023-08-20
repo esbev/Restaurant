@@ -11,9 +11,9 @@ Order.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    items_ordered: {
+    details_filename: {
       type: DataTypes.STRING,
-      allowNull: false, 
+      // allowNull: false, 
     },
     date_created: {
       type: DataTypes.DATE,
