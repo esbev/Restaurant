@@ -18,8 +18,19 @@
 			<div class="nav-wrapper">
 				<a href="./main.html" class="brand-logo left margin-left-60">Restaurant Express</a>
 				<ul id="nav-mobile" class="right">
-					<li><a href="../createAccount.html"><button class="btn" id="createAccount">Create Account</button></a></li>
-					<li><a href="../login.html"><button class="btn" id="Login">Login</button></a></li>
+
+					<a class='dropdown-trigger btn' href='#' data-target='dropdown1'><i class="material-icons right">dehaze</i></a>
+
+					<!-- Dropdown Structure -->
+					<ul id='dropdown1' class='dropdown-content'>
+					  <li><a href="#!">one</a></li>
+					  <li><a href="#!">two</a></li>
+					  <li class="divider" tabindex="-1"></li>
+					  <li><a href="#!">three</a></li>
+					  <li><a href="../createAccount.html"><i class="material-icons">view_module</i>four</a></li>
+					  <li><a href="../login.html"><i class="material-icons">cloud</i>five</a></li>
+					</ul>
+
 				</ul>
 			</div>
 		</nav>
