@@ -1,3 +1,4 @@
+// import fs = require('fs');
 
 $(document).ready(function(){
   $(".modal").modal();
@@ -72,43 +73,53 @@ const removeFromOrder = (itemId, itemPrice) => {
   $("#" + itemId).remove();
 };
 
-const getOrderDetails = () => {
+const getOrderDetails = async () => {
+  
+  
+  
   let isANumber = true;
-  let nameArr = [];
-  let priceArr = [];
-  let quantityArr = [];
+  let newItem = {};
+  let itemArr = [];
+  // let nameArr = [];
+  // let priceArr = [];
+  // let quantityArr = [];
   while (isANumber) {
+
     let lastOrderItem = parseInt($("#order-body").children().last().attr("id"));//get last row id
 
     if (!isNaN(lastOrderItem)) {//if last row id is a number
-      nameArr.unshift($("#name-" + lastOrderItem).text());
-      priceArr.unshift($("#price-" + lastOrderItem).text());
-      quantityArr.unshift($("#quantity-" + lastOrderItem).text());
+      newItem = {
+        name: $("#name-" + lastOrderItem).text(),
+        price: $("#price-" + lastOrderItem).text(),
+        quantity: $("#quantity-" + lastOrderItem).text(),
+        // total: $("#current-total").text(),
+      }
+
+      itemArr.unshift(newItem);
+      
       $("#" + lastOrderItem).remove();
     } else {
       isANumber = false;
     };
   };
-  console.log(nameArr);
-  console.log(priceArr);
-  console.log(quantityArr);
   $("#order-total-amt").text("$");
   $("#current-total").text("Order Total: $0");
-  return nameArr, priceArr, quantityArr;
-};
+  resetQuantities();
 
-const clearOrderTable = () => {//change this to clear rows that have a number
-  //start while last row has a number for the id
-  let isANumber = true;
-  while (isANumber) {
-    let lastOrderItem = parseInt($("#order-body").children().last().attr("id"));//get last row id
+  const response = await fetch('/api/orders' , {
+    method: 'POST',
+    headers: {
+        'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify(itemArr),
+  });
 
-    if (!isNaN(lastOrderItem)) {//if last row id is a number
-      $("#" + lastOrderItem).remove();
-    } else {
-      isANumber = false;
-    };
-  };
+  if (response.ok){
+    document.location.reload()
+  } else{
+    console.log("Error ")
+  }
+
 };
 
 const resetQuantities = () => {
@@ -132,6 +143,4 @@ $("#menu-container").on("click", (event) => {
 
 $("#place-order").on("click", () => {
   getOrderDetails();
-  // clearOrderTable();
-  resetQuantities();
 })
