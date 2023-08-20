@@ -9,7 +9,8 @@
   </button>
   <button
     id="current-total"
-    class="btn-flat grey-text text-darken-4 white right">Order Total: $
+    class="btn-flat grey-text text-darken-4 white right">
+    Order Total: $
   </button>
 </div>
 
@@ -34,7 +35,7 @@
         <tbody>
           {{#each items as |item|}}
               <tr>
-                <td id="item-name-{{item.id}}" class="tooltipped" data-tooltip="{{item.description}}">{{item.name}}</td>
+                <td id="item-name-{{item.id}}" class="tooltipped" data-position="top" data-tooltip="{{item.description}}">{{item.name}}</td>
                 <td id="item-price-{{item.id}}">${{item.price}}</td>
                 <td>
                   <button class="btn-floating btn-small waves-effect waves-light red">
