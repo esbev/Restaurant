@@ -19,15 +19,19 @@ Restaurant Express is an app for restaurant owners. They only need to upload the
 
 Home screenshot
 
-[![ss](./screeshots/ss-sm-home.png)
+[![ss](./screeshots/ss-lg-home.png)
+
+Create account screenshot
+
+[![ss](./screeshots/ss-md-create.png)
 
 Order screenshot
 
-[![ss](./screeshots/ss-sm-order.png)
+[![ss](./screeshots/ss-md-order.png)
 
 Order details screenshot
 
-[![ss](./screeshots/ss-sm-details.png)
+[![ss](./screeshots/ss-md-details.png)
 
 ## Installation
 
