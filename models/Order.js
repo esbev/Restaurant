@@ -12,7 +12,7 @@ Order.init(
       autoIncrement: true,
     },
     items_ordered: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false, 
     },
     date_created: {
