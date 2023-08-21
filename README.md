@@ -7,6 +7,7 @@
 Restaurant Express is an app for restaurant owners. They only need to upload their menu to the app and everything is done for them. The restaurant will now have the ability to allow customers to create an account and make orders from their menu with the Restaurant Express app. The restaurant will get to use their restaurant name, information, unnique images for their food items, and descriptions with Restaurant Express. Restaurant Express does it all for you.
 
 ## Table of Contents
+- [Website](#website)
 - [Preview](#preview)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -14,6 +15,10 @@ Restaurant Express is an app for restaurant owners. They only need to upload the
 - [Collaborators](#collaborators)
 - [Questions](#questions)
 - [License](#license)
+
+## Website
+
+https://restaurant-express-c9c955225096.herokuapp.com/
 
 ## Preview
 
