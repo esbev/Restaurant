@@ -54,7 +54,7 @@ To start the server run
 
 ## Usage
 
-for ordering food
+
 
 ## Credits
 
