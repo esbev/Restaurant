@@ -4,7 +4,7 @@
 
 ## Description
 
-Restaurant Express is an app for restaurant owners. They only need to upload their menu to the app and everything is done for them. The restaurant will now have the ability to allow customers to create an account and make orders from their menu with the Restaurant Express app. The restaurant will get to use their restaurant name, information, unnique images for their food items, and descriptions with Restaurant Express. Restaurant Express does it all for you.
+Restaurant Express is an app for ordering from a restaurant. Go to the site, create an account, login and you are ready to roll. simply navigate through the menu to create our order. You will be able to add and subtract from your order as you wish. When you are finished simply click the view order button. Look over your order to ensure it is what you desire and the click the confirm order button.
 
 ## Table of Contents
 - [Website](#website)
